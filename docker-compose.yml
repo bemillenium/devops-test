@@ -1,0 +1,35 @@
+version: '3'
+services:
+  web:
+    depends_on:
+      - graphite
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      HOST: graphite
+      PORT: 8125
+  graphite:
+    #image: graphiteapp/graphite-statsd:latest
+    image: graphiteapp/graphite-statsd:latest
+    ports:
+    - 80:80 #tcp
+    - 2003:2003 #netcat
+    - 8125:8125 #udp
+    volumes:
+    - ./storage:/opt/graphite/storage
+    environment:
+    - COLLECTD=1
+    - GRAPHITE_DEBUG=1
+    - REDIS_TAGDB=1
+    - BRUBECK=1
+  grafana:
+    image: grafana/grafana:8.1.4-ubuntu
+    depends_on:
+      - graphite
+    ports:
+    - 3000:3000
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
