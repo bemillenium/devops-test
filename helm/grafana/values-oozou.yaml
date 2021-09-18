@@ -194,7 +194,7 @@ ingress:
   pathType: Prefix
 
   hosts:
-    - monitoring.millenium-m.me.in.th
+    - monitoring.oozou.millenium-m.me
   ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
   extraPaths: []
   # - path: /*
@@ -210,10 +210,10 @@ ingress:
   #       port:
   #         name: service
 
-  # tls:
-  #   - secretName: wildcard-opstella-tls
-  #     hosts:
-  #       - monitoring.opstella.in.th
+  tls:
+    - secretName: wildcard-oozou-millnium
+      hosts:
+        - monitoring.oozou.millenium-m.me
 
 resources: {}
 #  limits:
