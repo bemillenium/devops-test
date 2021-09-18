@@ -39,3 +39,5 @@ IaC/.terraform.lock.hcl
 
 
 helm/cert-manager/manifests/cloudflare-api-token.yaml
+
+vpn-and-credential/
