@@ -12,11 +12,11 @@ resource "google_compute_network" "vpc_network" {
   mtu                     = 1460
 }
 resource "google_compute_router" "router" {
-  name                          = "test-router"
+  name                          = "millenium-oozou-router"
   network                       = google_compute_network.vpc_network.name
 }
 resource "google_compute_router_nat" "nat" {
-  name                               = "my-router-nat"
+  name                               = "millenium-oozou-nat"
   router                             = google_compute_router.router.name
   region                             = google_compute_router.router.region
   nat_ip_allocate_option             = "AUTO_ONLY"

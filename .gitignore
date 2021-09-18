@@ -37,3 +37,7 @@ terraform.rc
 IaC/.terraform.lock.hcl
 **storage**
 
+
+helm/cert-manager/manifests/cloudflare-api-token.yaml
+vpn-and-credential/
+
