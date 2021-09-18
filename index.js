@@ -2,7 +2,10 @@ const lynx = require('lynx');
 
 // instantiate a metrics client
 //  Note: the metric hostname is hardcoded here
-const metrics = new lynx('localhost', 8125);
+const hostname = process.env.HOST;
+const port = process.env.PORT;
+const metrics = new lynx(hostname, port);
+// const metrics = new lynx('localhost', 8125);
 
 // sleep for a given number of milliseconds
 function sleep(ms) {
@@ -20,6 +23,7 @@ async function main() {
 // infinite loop
 (async () => {
   console.log("🚀🚀🚀");
+  console.log(`Graphine is ${hostname}:${port}`);
   while (true) { await main() }
 })()
   .then(console.log, console.error);

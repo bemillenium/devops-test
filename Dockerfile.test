@@ -1,0 +1,13 @@
+FROM node:14-alpine
+
+WORKDIR /app
+COPY package.json /app/package.json
+RUN npm install
+
+COPY . /app
+
+COPY tests tests
+RUN npm update && \
+    npm install -g mocha
+
+CMD ["mocha", "tests/test.js"]
