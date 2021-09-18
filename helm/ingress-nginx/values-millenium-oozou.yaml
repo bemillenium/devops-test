@@ -1,0 +1,11 @@
+controller:
+  config: {}
+  kind: DaemonSet
+  service:
+    type: LoadBalancer
+    annotations:
+      networking.gke.io/load-balancer-type: "Internal"
+  admissionWebhooks:
+    enabled: false
+defaultBackend:
+  enabled: true
