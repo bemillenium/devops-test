@@ -35,3 +35,14 @@ In case you deploy it to any cloud platforms, please send us instructions & rele
 # Quick Build Docker
 $ bash build.sh
 ```
+`Note` Before connect to the cluster. This cluster is the private with no public endpoint except VPN. You need to install the openvpn client first and then import the .ovpn to connect to the cluster.
+```bash
+# Get cluster credential
+$ gcloud auth activate-service-account  developer-service-account-demo@mimetic-surf-230708.iam.gserviceaccount.com --key-file=<keyfile>.json
+
+# Retrive kubeconfig
+$ gcloud container clusters get-credentials gke-millenium-oozou --zone asia-southeast1-a --project mimetic-surf-230708
+
+# Get all pods
+$ kubectl get pod -A
+```
