@@ -1,0 +1,3 @@
+Application {{ .Release.Name }} deployed!
+
+You can access your application on this domain: {{- range .Values.ingress.rules }} {{ .host }} {{- end }}
