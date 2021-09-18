@@ -34,3 +34,4 @@ override.tf.json
 terraform.rc
 
 *credential.json
+IaC/.terraform.lock.hcl
