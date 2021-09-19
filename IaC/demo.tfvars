@@ -1,13 +1,16 @@
 project_id = "mimetic-surf-230708"
+# VPC and subnets
 vpc_network_name = "millenium-oozou"
 vpc_network_subnet_name = "millenium-oozou-develop"
 vpc_network_subnet_network_cidr = "10.4.0.0/18"
 
+# VPN Instance
 vpn_instance = {
   machine_type = "n1-standard-1"
   zone = "asia-southeast1-a"
 }
 
+# Google Kubernetes Engine
 gke_cluster_name = "gke-millenium-oozou"
 gke_cluster_ipv4_cidr_block = "10.6.0.0/16"
 gke_services_ipv4_cidr_block = "10.7.0.0/19"
